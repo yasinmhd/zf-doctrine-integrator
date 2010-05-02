@@ -1,4 +1,4 @@
-#Was muss installiert sein, damit das Script läuft?
+#summary Was muss installiert sein, damit das Script läuft?
 
 = Systemvoraussetzungen =
   * Eine Unix shell (sollten alle Linux Derivate sowie Mac OS X erfüllen)
