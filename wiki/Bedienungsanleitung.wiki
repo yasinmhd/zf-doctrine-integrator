@@ -1,4 +1,4 @@
-# Wie nutze ich das Script?
+#summary Wie nutze ich das Script?
 
 = Bedienungsanleitung =
 
