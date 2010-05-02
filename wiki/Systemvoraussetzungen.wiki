@@ -1,7 +1,7 @@
 #Was muss installiert sein, damit das Script läuft?
 
 = Systemvoraussetzungen =
-* Eine Unix shell (sollten alle Linux Derivate sowie Mac OS X erfüllen)
-* Subversion (das svn command muss global verfügbar sein)
+  * Eine Unix shell (sollten alle Linux Derivate sowie Mac OS X erfüllen)
+  * Subversion (das svn command muss global verfügbar sein)
 
 Das wars schon. :)
