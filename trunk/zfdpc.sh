@@ -1,4 +1,6 @@
-doctrinesvn="http://svn.doctrine-project.org/tags/2.0.0-BETA1"
+doctrinesvnorm="http://svn.github.com/doctrine/doctrine2.git"
+doctrinesvndbal="http://svn.github.com/doctrine/dbal.git"
+doctrinesvncommon="http://svn.github.com/doctrine/common.git"
 zfsvn="http://framework.zend.com/svn/framework/standard/trunk"
 zfdisvn="http://zf-doctrine-integrator.googlecode.com/svn/trunk"
 
@@ -17,9 +19,14 @@ echo "checking out Zend Framework ... this may take a while."
 svn export -q $zfsvn/bin/ ./temp/zf/bin >> /dev/null
 svn export -q $zfsvn/library/ ./temp/zf/lib >> /dev/null
 
-echo "checking out Doctrine ... this may take a while."
-svn export -q $doctrinesvn/lib/ ./temp/doctrine/lib >> /dev/null
-svn export -q $doctrinesvn/bin/ ./temp/doctrine/bin >> /dev/null
+echo "checking out Doctrine ORM ... this may take a while."
+svn export -q $doctrinesvnorm ./temp/doctrine/orm >> /dev/null
+
+echo "checking out Doctrine DBAL ... this may take a while."
+svn export -q $doctrinesvndbal ./temp/doctrine/dbal >> /dev/null
+
+echo "checking out Doctrine DBAL ... this may take a while."
+svn export -q $doctrinesvncommon ./temp/doctrine/common >> /dev/null
 
 echo "creating project"
 export ZEND_TOOL_INCLUDE_PATH=./temp/zf/lib
@@ -27,11 +34,13 @@ export ZEND_TOOL_INCLUDE_PATH=./temp/zf/lib
 
 # copy libraries
 echo "copying libraries"
-mv ./temp/zf/lib/* ./library
+mv ./temp/zf/lib/Zend ./library/Zend
 mv ./temp/zf/bin/* ./bin
-mv ./temp/doctrine/lib/Doctrine ./library/Doctrine
-mv ./temp/doctrine/lib/vendor ./library/vendor
-mv ./temp/doctrine/bin/* ./bin
+mv ./temp/doctrine/orm/lib/Doctrine ./library/Doctrine
+mv ./temp/doctrine/dbal/lib/Doctrine/DBAL ./library/Doctrine/DBAL
+mv ./temp/doctrine/common/lib/Doctrine/Common ./library/Doctrine/Common
+mv ./temp/doctrine/orm/lib/vendor ./library/vendor
+mv ./temp/doctrine/orm/bin/* ./bin
 
 rm -rf ./temp
 
